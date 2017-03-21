@@ -1,1 +1,1 @@
-FROM million12/docker-haproxy:latest
+FROM million12/docker-haproxy
