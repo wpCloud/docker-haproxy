@@ -1,4 +1,4 @@
-FROM million12/haproxy
+FROM million12/haproxy:1.6.3
 
 ADD bin/haproxy.check.sh /usr/local/bin/haproxy.check.sh
 
