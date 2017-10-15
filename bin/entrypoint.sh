@@ -69,6 +69,9 @@ while inotifywait -q -e create,delete,modify,attrib $HAPROXY_CONFIG /etc/hosts; 
     $HAPROXY_CHECK_CONFIG_CMD
     $ENABLE_SYN_DROP
     sleep 0.2
+    
+    log "Starting using [${HAPROXY_CMD} -sf $(cat $HAPROXY_PID_FILE)] command."
+    
     $HAPROXY_CMD -sf $(cat $HAPROXY_PID_FILE)
     $DISABLE_SYN_DROP
     log "HAProxy restarted, pid $(cat $HAPROXY_PID_FILE)." && log
